@@ -1,0 +1,426 @@
+.img-content, .img-content:hover, .change_image_link{-webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out;-o-transition: all .3s ease-in-out; transition: all .3s ease-in-out;}
+    
+.facility-main{max-height: 200px; overflow-y: scroll;}
+.facilities{}
+
+.facilities label{width:100%;cursor:pointer}
+.facilities p{margin:0px;padding:5px;border: 1px solid #DDD}
+.facilities p span:first-child{margin-right:15px}
+.facilities p span:last-child{}
+
+.img-content{margin:0px;position: relative;min-height: 80px}
+.change_image_link{display: block;position: absolute;top: 0px;background:rgba(0, 128, 128, 0.78);color: #FFF;bottom: 0px;left: 0px;right: 0;font-size: 24px;padding: 20px;opacity: 0;}
+.img-content:hover .change_image_link{opacity: 1;}
+.change_image_link span{color:aliceblue}
+.loading_div{position:relative;position: absolute;left: 0px;right:0px;top:0px;bottom:0px; z-index: 999; background: rgba(128, 128, 128, 0.45);}
+.loading_active{display:block}
+.loading_dactive{display: none}
+.innerloading_bar{color:black; width: 200px; height: 200px;position: absolute;left: 45%;top: 100px;}
+
+
+/*This style for home booking system*/
+.home_booking_section{background: #1771a5;padding:30px 0px}
+.booking_elements{}
+.booking_elements select, .booking_elements input[type=text]{background: inherit;width: 100%;color: #FFF;border: 2px solid rgba(255,255,255,0.2);padding: 13.5px 15px;height: 50px;}
+.booking_elements select option{background-color:#FFF;color:#000}
+
+.booking_elements ::-webkit-input-placeholder {color:    #FFF;}
+.booking_elements :-moz-placeholder {color:    #FFF; opacity:  1;}
+.booking_elements ::-moz-placeholder { color:    #FFF;  opacity:  1;}
+.booking_elements :-ms-input-placeholder {  color:    #FFF;}
+
+
+
+/*Now the CSS*/
+* {margin: 0; padding: 0;}
+
+.tree ul {
+	padding-top: 20px; position: relative;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+.tree li {
+	float: left; text-align: center;
+	list-style-type: none;
+	position: relative;
+	padding: 20px 5px 0 5px;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+.tree li::before, .tree li::after{
+	content: '';
+	position: absolute; top: 0; right: 50%;
+	border-top: 1px solid #ccc;
+	width: 50%; height: 20px;
+}
+.tree li::after{
+	right: auto; left: 50%;
+	border-left: 1px solid #ccc;
+}
+
+/*We need to remove left-right connectors from elements without 
+any siblings*/
+.tree li:only-child::after, .tree li:only-child::before {
+	display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child{ padding-top: 0;}
+
+/*Remove left connector from first child and 
+right connector from last child*/
+.tree li:first-child::before, .tree li:last-child::after{
+	border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before{
+	border-right: 1px solid #ccc;
+	border-radius: 0 5px 0 0;
+	-webkit-border-radius: 0 5px 0 0;
+	-moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+	border-radius: 5px 0 0 0;
+	-webkit-border-radius: 5px 0 0 0;
+	-moz-border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before{
+	content: '';
+	position: absolute; top: 0; left: 50%;
+	border-left: 1px solid #ccc;
+	width: 0; height: 20px;
+}
+
+.tree li a{
+    border: 1px solid #00acd7;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: #FFF;
+    font-family: arial, verdana, tahoma;
+    font-size: 16px;
+    display: inline-block;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    background: #00c0ef;
+}
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+.tree li a:hover, .tree li a:hover+ul li a {
+	background: #f39c12;
+    color: #FFF;
+    border: 1px solid #da8c10;
+}
+/*Connector styles on hover*/
+.tree li a:hover+ul li::after, 
+.tree li a:hover+ul li::before, 
+.tree li a:hover+ul::before, 
+.tree li a:hover+ul ul::before{
+	border-color:  #94a0b4;
+}
+
+.tree_parent_image{max-width: 50px;
+display: block;
+overflow: hidden;
+margin-left: auto;
+margin-right: auto;}
+.tree p{margin:0px}
+
+
+.small-box h3{font-size: 26px}
+/*Thats all. I hope you enjoyed it.
+Thanks :)*/
+
+
+
+
+
+
+/*==============================================================================
+            STYLE FOR PAGES
+===============================================================================*/
+.post_type_box .alert{display:none !importent;width:0px;height:0px;border:0px;opacity: 0;left:-99999px;overflow:hoidden}
+.post_type_box .item.bad .alert{display:none !importent;width:0px;height:0px;border:0px;opacity: 0;left:-99999px;overflow:hoidden}
+.post_type_box .item .alert::after{border:0px}
+.post_type_box .item .alert::before{border:0px}
+.category_display{max-height: 150px;overflow-y: scroll;}
+.category_display p{margin: 0px;}
+.category_display p span{display:inline-block;margin-right:10px}
+
+
+
+/*
+====================================================================================================================
+                                            THIKBOX STYLE GOES HERE
+====================================================================================================================
+*/
+
+/*This style fo thik box*/
+.thikBoxArea{width:100%;height:100%;position:fixed;top:0;left:0;right:0;bottom:0;background: #00000080;z-index: 999999;padding:20px;display:none}
+.thikBoxArea .container{height:100%;margin:0 auto;background: #FFF;border: 2px solid #292727;overflow:hidden}
+.thikBoxHeader{border-bottom:1px solid #DDD;margin-left:0px;margin-right:0px}
+.CloseThikBox{float: right;}
+.CloseThikBox span{margin: 8px 0px;}
+.thikBoxLeftBar{border-right:1px solid #DDD;height:100px}
+.setItemThikbox{float:right;margin: 8px 0px;}
+.setItemThikbox span{margin: 0px;}
+.thikBoxFooter{border-top:1px solid #DDD;margin-left:0px;margin-right:0px}
+.customtimgbox-padding{padding:10px}
+.thikboxImage{position:relative}
+
+.thikboxImageActive img{padding: 10px;background: #28b6d5;position:relative}
+.thikboxImageActive:before{width:50px;height:50px;content: " ";background: url(../img/selectimgbg.png);position:absolute;top: 0;right: 0;z-index: 2;}
+
+.thikboxImage:hover{cursor:pointer}
+.thikboxImage img{height:124px}
+.custom-margin{margin:0px}
+.thikBoxContent{overflow-y: scroll;max-height: 80%;}
+.thik_box_file_upload{float:right}
+.thik_box_file_upload .progress{display: inline-block;margin: 11px 0px;padding: 0px 0px;float: left;width: 500px;display:none;-webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out;-o-transition: all .3s ease-in-out; transition: all .3s ease-in-out;}
+body{-webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out;-o-transition: all .3s ease-in-out; transition: all .3s ease-in-out;}
+.live-icon:before{background: #F80505;}
+.text_box{width: 100%;padding: 5px;border: 1px solid #DDD;background: #FFF;margin-top: 5px;}
+
+
+
+/*Offline booking cabin plan*/
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
+.plane {
+  margin: 20px auto;
+  max-width: 300px;
+}
+
+.cockpit {
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border-bottom: 5px solid #d8d8d8;
+}
+.cockpit:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 500px;
+  width: 100%;
+  border-radius: 50%;
+  border-right: 5px solid #d8d8d8;
+  border-left: 5px solid #d8d8d8;
+}
+.cockpit h1 {
+  width: 60%;
+  margin: 100px auto 35px auto;
+}
+
+.exit {
+  position: relative;
+  height: 50px;
+}
+.exit:before, .exit:after {
+  content: "বাহির";
+  font-size: 14px;
+  line-height: 18px;
+  padding: 0px 2px;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  display: block;
+  position: absolute;
+  background: green;
+  color: white;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.exit:before {
+  left: 0;
+}
+.exit:after {
+  right: 0;
+}
+
+.fuselage {
+  border-right: 5px solid #d8d8d8;
+  border-left: 5px solid #d8d8d8;
+    border-bottom: 5px solid #d8d8d8;
+}
+
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.seats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.seat {
+  display: flex;
+  flex: 0 0 14.28571428571429%;
+  padding: 5px;
+  position: relative;
+}
+.seat:nth-child(3) {
+  margin-right: 14.28571428571429%;
+}
+.seat input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+}
+.seat input[type=checkbox]:checked + label {
+  background: #bada55;
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+}
+.seat input[type=checkbox]:disabled + label {
+  background: #dddddd;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+.seat input[type=checkbox]:disabled + label:after {
+  content: "X";
+  text-indent: 0;
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+.seat input[type=checkbox]:disabled + label:hover {
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.seat label {
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5rem;
+  padding: 4px 0;
+  background: #0AA17D;
+  border-radius: 5px;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+    color:#FFF;
+    
+}
+.seat label:before {
+  content: "";
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  top: 1px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 3px;
+}
+.seat label:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0px 2px #5C6AFF;
+}
+
+@-webkit-keyframes rubberBand {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes rubberBand {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.rubberBand {
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
+}
+.cabin_book_button{color: #FFF;
+border: 1px solid #09634e;
+border-radius: 25px;
+background: #0e775e;margin-top: 15px;cursor: pointer;
+}
+
+.cockpit p{font-size: 15px;}
+.cockpit p:first-child{margin-top: 100px;}
+.copy_right_text p{color:#FFF;margin: 0px;}
+.lonch_group_menu{margin: 0;padding: 0;list-style: none;text-align: center;}
+.lonch_group_menu li{display: inline-block}
+.lonch_group_menu li a{display: block;padding: 5px 15px;border: 1px solid #09cba4;font-size: 25px;margin: 5px;text-decoration: none;}
+.lonch_group_menu li a span{display: block;font-size: 14px;}
+.lonch_group_menu li a:hover{color: #FFF;border-color:  #09634e;;background: #0e775e;}
+.lonch_info_p{margin-bottom: 3px;}

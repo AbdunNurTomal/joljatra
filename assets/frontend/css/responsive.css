@@ -1,0 +1,27 @@
+
+@media (max-width: 480px) { 
+  .menu_container{margin: 0px auto;}
+    .main_logo img{  max-width: 220px; margin-left: -20px; margin-top: 3px; }
+    .home_tab_icons .single_icons i{font-size: 50px;}
+    .home_tab_icons .single_icons h2 {    font-size: 18px;}
+    .home_tab_icons .single_icons{border: 1px solid #AEAEAE66;}
+    .home_content_section { padding: 0;}
+    .footer_social_menu{float: left;margin-top: 15px;}
+    .mobile_display_none{display:none}
+    .customer_profile_header{font-size: 25px;}
+    
+    .carousel-inner > .carousel-item > img { height: auto;}
+    .carousel-item-next, .carousel-item-prev, .carousel-item.active{display: block}
+    .notice_table tr td i{font-size: 18px;}
+    .notice_table tr td a{font-size: 12px;}
+    .notice_date{font-size: 13px;}
+}
+
+@media (max-width: 767px) { 
+    .carousel-inner > .carousel-item > img { height: auto;}
+    .carousel-item-next, .carousel-item-prev, .carousel-item.active{display: block}
+}
+
+@media (min-width: 768px) and (max-width: 979px) {  }
+
+@media (min-width: 1200px) {  }
